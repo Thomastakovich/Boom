@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome</title>
+<title>Register Successfully!</title>
 </head>
 <body>
-<h1>WELCOME!</h1>
-Your course List:
+<h1>Register Successfully</h1>
+Your userName: ${student.getUserName()}
+<a href="login.htm"> Go to Login </a>
 </body>
 </html>

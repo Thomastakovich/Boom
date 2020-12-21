@@ -4,10 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome</title>
+<title>ERROR</title>
 </head>
 <body>
-<h1>WELCOME!</h1>
-Your course List:
+<h1>ERROR</h1>
+Wrong username or password
+<br/>
+Please try again
+<br/>
+<a href="login.htm"/> Go Back </a>
 </body>
 </html>

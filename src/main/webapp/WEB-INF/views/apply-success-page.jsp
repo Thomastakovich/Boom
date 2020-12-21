@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome</title>
+<title>Application submitted!</title>
 </head>
 <body>
-<h1>WELCOME!</h1>
-Your course List:
+You've applied for ${requestScope.courseName}<br/>
+Please wait for administrator.  <br/>
+<a href="student.htm"> Back to main page</a>
 </body>
 </html>

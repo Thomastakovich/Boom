@@ -21,8 +21,13 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<interceptors>
+		<interceptor>
+			<mapping path="/*.htm"/>
+			<beans:bean class="com.me.filter.XssInterceptor" />
+		</interceptor>
+	</interceptors>	
 	<context:component-scan base-package="com.me.boom" />
-	
 	
 	
 </beans:beans>

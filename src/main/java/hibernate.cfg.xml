@@ -8,8 +8,13 @@
         <property name="hibernate.connection.password">970825zqs</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/boom</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="hbm2ddl.auto">update</property>
         <property name="show_sql">true</property>
         <mapping class="com.me.pojo.Student"/>
+        <mapping class="com.me.pojo.Teacher"/>
+        <mapping class="com.me.pojo.Course"/>
+        <mapping class="com.me.pojo.Admin" />
+        <mapping class="com.me.pojo.Application" />
     </session-factory>
 </hibernate-configuration>

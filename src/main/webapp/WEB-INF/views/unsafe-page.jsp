@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome</title>
+<title>Unsafe Input!</title>
 </head>
 <body>
-<h1>WELCOME!</h1>
-Your course List:
+<h1>WARNING: UNSAFE INPUT!</h1>
 </body>
 </html>

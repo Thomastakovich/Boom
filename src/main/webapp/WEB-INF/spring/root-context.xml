@@ -5,4 +5,8 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean name="studentdao" class="com.me.dao.StudentDao" />
+	<bean name="studentRegisterValidator" class="com.me.validator.StudentRegisterValidator" />
+	<bean name="xssInterceptor" class="com.me.filter.XssInterceptor" />
+	<bean name="addCourseValidator" class="com.me.validator.AddCourseValidator" />
+	<bean name="addTeacherValidator" class="com.me.validator.AddTeacherValidator" />
 </beans>

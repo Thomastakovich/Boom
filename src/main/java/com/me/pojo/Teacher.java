@@ -1,34 +1,46 @@
 package com.me.pojo;
 
+import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "student")
-public class Student {
+@Table(name = "teacher")
+public class Teacher {
 	
 	private String id;
 	private String firstName;
 	private String lastName;
 	private String userName;
 	private String password;
-	private String email;
 	private String zoomId;
-	private Set<Course> courses;
+//	private Set<Course> courses;
 	
-	public Student() {
+	public Teacher() {
 	}
+	
+	
+
+	public Teacher(String firstName, String lastName, String userName, String password, String zoomId) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.zoomId = zoomId;
+//		this.courses = new HashSet<Course>();
+	}
+
 
 	@Id
 	@GeneratedValue(generator="system-uuid")
@@ -75,15 +87,6 @@ public class Student {
 	}
 
 	@Column(unique = true)
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	@Column(unique = true)
 	public String getZoomId() {
 		return zoomId;
 	}
@@ -92,28 +95,18 @@ public class Student {
 		this.zoomId = zoomId;
 	}
 
-	@ManyToMany
-    @JoinTable(name = "link_student_course")
-	@Cascade(CascadeType.DELETE)
-	public Set<Course> getCourses() {
-		return courses;
-	}
+//	@OneToMany(targetEntity = Course.class)
+//	@JoinColumn(name = "teacherId")
+//	public Set<Course> getCourses() {
+//		return courses;
+//	}
+//
+//	public void setCourses(Set<Course> courses) {
+//		this.courses = courses;
+//	}
 
-	public void setCourses(Set<Course> courses) {
-		this.courses = courses;
-	}
-
-	public Student(String firstName, String lastName, String userName, String password, String email, String zoomId) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.userName = userName;
-		this.password = password;
-		this.email = email;
-		this.zoomId = zoomId;
-	}
 	
-	@Override
-	public String toString() {
-		return "Id: " + this.id + " username: " + this.userName;
-	}
+	
+	
+
 }

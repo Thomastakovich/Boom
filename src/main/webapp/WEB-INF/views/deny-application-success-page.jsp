@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome</title>
+<title>Deny successfully</title>
 </head>
 <body>
-<h1>WELCOME!</h1>
-Your course List:
+The application has been denied.
+<a href="admin.htm"> Go Back </a>
 </body>
 </html>

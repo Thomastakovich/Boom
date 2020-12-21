@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome</title>
+<title>Done</title>
 </head>
 <body>
-<h1>WELCOME!</h1>
-Your course List:
+Approved!
+<br/>
+<a href="admin.htm"> Go Back </a>
 </body>
 </html>

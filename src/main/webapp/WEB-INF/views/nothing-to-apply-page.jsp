@@ -4,10 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome</title>
+<title>ERROR!</title>
 </head>
 <body>
-<h1>WELCOME!</h1>
-Your course List:
+<h1>WARNING!</h1>
+Please choose one course you want to apply!
+<br/>
+<a href="student.htm"> Back to main page </a>
 </body>
 </html>

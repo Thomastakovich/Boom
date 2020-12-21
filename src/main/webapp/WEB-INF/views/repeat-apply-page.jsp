@@ -4,10 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome</title>
+<title>Warning!</title>
 </head>
 <body>
-<h1>WELCOME!</h1>
-Your course List:
+<h1>Warning:</h1>
+You cannot apply course you've participated in! <br/>
+
+<a href="student.htm">Go Back</a>
 </body>
 </html>

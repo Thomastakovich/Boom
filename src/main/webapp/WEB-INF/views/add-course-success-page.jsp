@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h1>WELCOME!</h1>
-Your course List:
+${course.getName()} added success!
+<a href="admin.htm"> Go to main page </a>
 </body>
 </html>

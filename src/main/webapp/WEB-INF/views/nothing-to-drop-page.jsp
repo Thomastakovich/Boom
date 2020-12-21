@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome</title>
+<title>Drop Error</title>
 </head>
 <body>
-<h1>WELCOME!</h1>
-Your course List:
+<h1>Nothing to drop!</h1>
+<a href="student.htm"> Go Back </a>
 </body>
 </html>
