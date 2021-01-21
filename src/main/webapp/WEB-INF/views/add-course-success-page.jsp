@@ -7,7 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-${course.getName()} added success!
+Added success!
+<br/>
+Course name: ${course.getName()} <br/>
+Start Date: ${course.getStartDate().toString()} <br/>
+End Date: ${course.getEndDate().toString()} <br/>
+Course description: ${course.getDescription()} <br/>
 <a href="admin.htm"> Go to main page </a>
 </body>
 </html>

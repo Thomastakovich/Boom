@@ -1,5 +1,6 @@
 package com.me.dao;
 
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -21,10 +22,10 @@ public class CourseDao extends DAO {
 		
 	}
 	
-	public Course createCourse(String name, String startDate, String endDate, String startTime, String endTime) throws Exception {
+	public Course createCourse(String name, Date startDate, Date endDate, String startTime, String endTime, String description) throws Exception {
 		try {
 			begin();
-			Course c = new Course(name, startDate, endDate, startTime, endTime);
+			Course c = new Course(name, startDate, endDate, startTime, endTime, description);
 			getSession().save(c);
 			commit();
 			return c;

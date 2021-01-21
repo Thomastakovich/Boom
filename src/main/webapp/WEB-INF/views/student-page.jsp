@@ -23,6 +23,8 @@ Your courses:
 		<th>Course Date</th>
 		<th>Course Time</th>
 		<th>Teacher</th>
+		<th>Description</th>
+		<th>Selected</th>
 	</tr>
 	<c:forEach var="c" items="${sessionScope.user.getCourses()}">
 		<tr>
@@ -31,6 +33,8 @@ Your courses:
 			<td>From <c:out value="${c.getStartDate()}" /> To <c:out value="${c.getEndDate()}" /> </td>
 			<td>From <c:out value="${c.getStartTime()}" /> To <c:out value="${c.getEndTime()}" /> </td>
 			<td><c:if test="${c.getTeacher() == null}"><c:out value="Not assigned"/></c:if><c:if test="${c.getTeacher() != null}"><c:out value="${c.getTeacher().getFirstName()}"/></c:if></td>
+			<td><c:out value="${course.getDescription()}"/></td>
+			<td><c:out value="${c.getStudents().size()}"/></td>
 		</tr>
 	</c:forEach>
 	
@@ -38,7 +42,7 @@ Your courses:
 <input type="submit" value="drop"/>
 </form>
 <br/>
-<a href = "studentBrowseCourse.htm"> Browse & Apply for a course </a>
+<a href = "studentBrowseCourse.htm"> Browse and Apply for a course </a>
 <br/>
 <a href = "login.htm">Log Out</a>
 </body>

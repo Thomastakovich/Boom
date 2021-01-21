@@ -18,6 +18,8 @@
 			<th>Course Date</th>
 			<th>Course Time</th>
 			<th>Teacher</th>
+			<th>Description</th>
+			<th>Selected</th>
 		</tr>
 		<c:forEach var="course" items="${requestScope.courses}">
 			<tr>
@@ -25,7 +27,9 @@
 				<td><c:out value="${course.getName()}"/></td>
 				<td>From <c:out value="${course.getStartDate()}"/> to <c:out value="${course.getEndDate()}"/></td>
 				<td>From <c:out value="${course.getStartTime()}"/> to <c:out value="${course.getEndTime()}"/></td>
+				<td><c:out value="${course.getDescription()}"/></td>
 				<td><c:if test="${course.getTeacher() == null}"><c:out value="Not assigned"/></c:if><c:if test="${course.getTeacher() != null}"><c:out value="${course.getTeacher().getFirstName()}"/></c:if></td>
+				<td><c:out value="${course.getStudents().size()}"/></td>
 			</tr>
 		</c:forEach>
 	</table>

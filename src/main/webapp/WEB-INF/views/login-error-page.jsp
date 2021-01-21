@@ -12,6 +12,6 @@ Wrong username or password
 <br/>
 Please try again
 <br/>
-<a href="login.htm"/> Go Back </a>
+<a href="login.htm"> Go Back </a>
 </body>
 </html>

@@ -1,22 +1,21 @@
 package com.me.pojo;
 
-import java.sql.Date;
-import java.sql.Time;
-import java.util.HashSet;
+import java.util.Date;
 import java.util.Set;
-import java.util.UUID;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table (name="course")
@@ -24,10 +23,11 @@ public class Course {
 
 	private String id;
 	private String name;
-	private String startDate;
-	private String endDate;
+	private Date startDate;
+	private Date endDate;
 	private String startTime;
 	private String endTime;
+	private String description;
 	private Teacher teacher;
 	private Set<Student> students;
 	
@@ -53,19 +53,23 @@ public class Course {
 		this.name = name;
 	}
 
-	public String getStartDate() {
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Temporal(TemporalType.DATE)
+	public Date getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(String startDate) {
+	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
 
-	public String getEndDate() {
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Temporal(TemporalType.DATE)
+	public Date getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(String endDate) {
+	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
 
@@ -85,6 +89,14 @@ public class Course {
 		this.endTime = endTime;
 	}
 	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	@ManyToOne
 	@JoinColumn(name = "teacherId")
 	public Teacher getTeacher() {
@@ -104,12 +116,13 @@ public class Course {
 		this.students = students;
 	}
 
-	public Course(String name, String startDate, String endDate, String startTime, String endTime) {
+	public Course(String name, Date startDate, Date endDate, String startTime, String endTime, String description) {
 		this.name = name;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.startTime = startTime;
 		this.endTime = endTime;
+		this.description = description;
 	}
 	
 }

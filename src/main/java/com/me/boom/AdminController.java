@@ -1,5 +1,7 @@
 package com.me.boom;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,9 +9,12 @@ import javax.servlet.http.HttpSession;
 
 import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -42,17 +47,24 @@ public class AdminController {
 		
 		addCourseValidator.validate(course, result);
 		if (result.hasErrors()) {
-			System.out.println("Errors!");
+			System.out.println("err");
 			return "add-course-page";
 		}
 		status.setComplete();
 		
 		try {
-			dao.createCourse(course.getName(), course.getStartDate(), course.getEndDate(), course.getStartTime(), course.getEndTime());
+			dao.createCourse(course.getName(), course.getStartDate(), course.getEndDate(), course.getStartTime(), course.getEndTime(), course.getDescription());
 		} catch (HibernateException e) {
 			return "error-page";
 		}
 		return "add-course-success-page";
+	}
+	
+	@InitBinder     
+	public void initBinder(WebDataBinder binder){
+		SimpleDateFormat dateFormat = new SimpleDateFormat( "yyyy-MM-dd");
+	     binder.registerCustomEditor(       Date.class,     
+	                         new CustomDateEditor(dateFormat, true, 10));   
 	}
 
 	@RequestMapping(value = "/browseCourses.htm", method = RequestMethod.GET)
@@ -61,6 +73,9 @@ public class AdminController {
 			List<Course> courses = dao.browseCourses();
 			request.setAttribute("courses", courses);
 			System.out.println(courses.size());
+			for (Course c : courses) {
+				System.out.println(c.getName() + " " + c.getId());
+			}
 		} catch (HibernateException e) {
 			return "error-page";
 		}

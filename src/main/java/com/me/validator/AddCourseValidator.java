@@ -17,12 +17,10 @@ public class AddCourseValidator implements Validator {
 	@Override
 	public void validate(Object obj, Errors errors) {
 		// TODO Auto-generated method stub
-		Course course = (Course) obj;
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "error.name", "Name canno be empty!");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "startDate", "error.startDate", "start Date cannot be empty!");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "endDate", "error.endDate", "end Date cannot be empty!");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "startTime", "error.startTime", "start Time cannot be empty!");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "endTime", "error.endTime", "end Time cannot be empty!");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description", "error.description", "Description cannot be empty");
 	}
 
 }

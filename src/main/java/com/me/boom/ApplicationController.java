@@ -49,6 +49,10 @@ public class ApplicationController {
 		student.getCourses().add(course);
 		course.getStudents().add(student);
 		appDao.deleteApplication(appId);
+		System.out.println("Student size: " + course.getStudents().size());
+		for (Course c : student.getCourses()) {
+			System.out.println("Course: " + c.getName() + c.getDescription());
+		}
 		return "approve-application-success-page";
 	}
 	

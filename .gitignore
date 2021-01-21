@@ -52,6 +52,7 @@ Thumbs.db
 .classpath
 .project
 .settings/
+.springBeans
 
 # Intellij
 .idea/
@@ -64,3 +65,6 @@ Thumbs.db
 # Maven
 log/
 target/
+
+# Tern plugin
+.tern-project
